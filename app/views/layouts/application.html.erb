@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>On Call</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<%= image_tag "/DMVHeader.png" %><br/>
+<h1>On Call</h1>
+<%= link_to 'Groups', groups_path %> <%= link_to 'People', people_path %> <%= link_to 'Offices', offices_path %><br/>
+<%= yield %><br/>
+<br/>
+<%= link_to 'Groups', groups_path %> <%= link_to 'People', people_path %> <%= link_to 'Offices', offices_path %><br/>
+</body>
+</html>

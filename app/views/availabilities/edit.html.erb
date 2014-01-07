@@ -1,0 +1,25 @@
+<h2>Editing period</h2>
+<%= form_for(@availability) do |f| %>
+  <% if @availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
+      <ul>
+      <% @availability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label "From" %><br />
+    <%= f.date_select :fromDay %>
+  </div>
+  <div class="field">
+    <%= f.label 'To' %><br />
+    <%= f.date_select :toDay %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update period" %>
+  </div>
+<% end %>
+<%= link_to 'Back', groups_path %> 

@@ -1,0 +1,42 @@
+<h2>Offices</h2>
+<%= link_to 'New Office', new_office_path %><br/><br/>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Zone</th>
+    <th>Phone</th>
+    <th>Notes</th>
+  </tr>
+<% @offices.each do |office| %>
+  <tr>
+    <td><%= office.name %></td>
+    <td><div align="center"><%= if office.sun.nil? then "X" end %></div></td>
+    <td><div align="center"><%= if office.mon.blank? then "X" end %></div></td>
+    <td><div align="center"><%= if office.tue.blank? then "X" end %></div></td>
+    <td><div align="center"><%= if office.wed.blank? then "X" end %></div></td>
+    <td><div align="center"><%= if office.thu.blank? then "X" end %></div></td>
+    <td><div align="center"><%= if office.fri.blank? then "X" end %></div></td>
+    <td><div align="center"><%= if office.sat.blank? then "X" end %></div></td>
+    <td><%= office.from %></td>
+    <td><%= office.to %></td>
+    <td><%= office.zone %></td>
+    <td><%= office.phone %></td>
+    <td><%= office.notes %></td>
+    <td><%= link_to 'Edit', edit_office_path(office) %> <%= link_to 'Delete', office, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Office', new_office_path %>
+

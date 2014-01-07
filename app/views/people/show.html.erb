@@ -1,0 +1,20 @@
+<h2>Showing Person</h2>
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Name:</b>
+  <%= @person.name %>
+</p>
+<p>
+  <b>Work:</b>
+  <%= @person.work %>
+</p>
+<p>
+  <b>Nonwork:</b>
+  <%= @person.nonwork %>
+</p>
+<p>
+  <b>Group:</b>
+  <%= if not @person.group_id.nil? then Group.find(@person.group_id).name end %>
+</p>
+<%= link_to 'Edit', edit_person_path(@person) %><br/><br/>
+<%= link_to 'Back', people_path %>

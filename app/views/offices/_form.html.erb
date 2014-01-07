@@ -1,0 +1,70 @@
+<%= form_for(@office) do |f| %>
+  <% if @office.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@office.errors.count, "error") %> prohibited this office from being saved:</h2>
+
+      <ul>
+      <% @office.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sun %><br />
+    <%= f.check_box :sun %>
+  </div>
+  <div class="field">
+    <%= f.label :mon %><br />
+    <%= f.check_box :mon %>
+  </div>
+  <div class="field">
+    <%= f.label :tue %><br />
+    <%= f.check_box :tue %>
+  </div>
+  <div class="field">
+    <%= f.label :wed %><br />
+    <%= f.check_box :wed %>
+  </div>
+  <div class="field">
+    <%= f.label :thu %><br />
+    <%= f.check_box :thu %>
+  </div>
+  <div class="field">
+    <%= f.label :fri %><br />
+    <%= f.check_box :fri %>
+  </div>
+  <div class="field">
+    <%= f.label :sat %><br />
+    <%= f.check_box :sat %>
+  </div>
+  <div class="field">
+    <%= f.label :from %><br />
+    <%= f.text_field :from %>
+  </div>
+  <div class="field">
+    <%= f.label :to %><br />
+    <%= f.text_field :to %>
+  </div>
+  <div class="field">
+    <%= f.label :zone %><br />
+    <%= f.text_field :zone %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= link_to 'Back', offices_path %>

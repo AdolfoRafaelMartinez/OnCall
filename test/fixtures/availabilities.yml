@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  person: 
+  fromDay: 2011-04-14
+  toDay: 2011-04-14
+  fromTime: 2011-04-14 09:01:18
+  toTime: 2011-04-14 09:01:18
+
+two:
+  person: 
+  fromDay: 2011-04-14
+  toDay: 2011-04-14
+  fromTime: 2011-04-14 09:01:18
+  toTime: 2011-04-14 09:01:18

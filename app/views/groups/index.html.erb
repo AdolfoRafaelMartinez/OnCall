@@ -1,0 +1,35 @@
+<h2>Groups</h2>
+<h3>Valid <%= Availability.first.fromDay.strftime("%m/%d/%Y") %> to <%= Availability.first.toDay.strftime("%m/%d/%Y") %> <%= link_to '(Change)', edit_availability_path(Availability.first) %></h3>
+<%= link_to 'New Group', new_group_path %><br/><br/>
+<table border="0">
+  <tr>
+    <th>Name</th>
+    <th>On Call</th>
+    <th>Work</th>
+    <th>Nonwork</th>
+  </tr>
+<% @groups.each do |group| %>
+  <tr>
+    <%= form_for group, :method => "put" do |f| %>
+    <td><%= group.name %></td>
+    <td><%= collection_select(:group, :person_id, Person.order(:name).where("group_id=?",group.id), :id, :name, {:selected => group.person_id}, {:style => "width:150px"}) %>
+    </td>
+    <td>
+	<%= if not group.person.nil? then group.person.work end  %>
+    </td>
+    <td>
+	<%= if not group.person.nil? then group.person.nonwork end  %>
+    </td>
+    <td>
+      <span class="actions">
+        <%= f.submit "Change" %>
+      </span> 
+      <%= link_to 'Delete', group, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+    <% end %>
+  </tr>
+<% end %>
+</table><br/>
+Dwight Miles | work 512-467-3948 | cell 512-905-9935<br/>
+<br/>
+<%= link_to 'New Group', new_group_path %>

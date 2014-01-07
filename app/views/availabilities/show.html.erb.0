@@ -1,0 +1,27 @@
+<h1>On Call</h1>
+<h2>Showing availability</h2>
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Person:</b>
+  <%= @availability.person.name %>
+</p>
+<p>
+  <b>Fromday:</b>
+  <%= @availability.fromDay.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <b>Today:</b>
+  <%= @availability.toDay.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <b>Fromtime:</b>
+  <%= @availability.fromTime.strftime("%H:%M") %>
+</p>
+
+<p>
+  <b>Totime:</b>
+  <%= @availability.toTime.strftime("%H:%M") %>
+</p>
+<%= link_to 'Edit', edit_availability_path(@availability) %>

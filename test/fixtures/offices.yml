@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  sun: false
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  fri: false
+  sat: false
+  from: MyString
+  to: MyString
+  zone: MyString
+  phone: MyString
+  notes: MyString
+
+two:
+  name: MyString
+  sun: false
+  mon: false
+  tue: false
+  wed: false
+  thu: false
+  fri: false
+  sat: false
+  from: MyString
+  to: MyString
+  zone: MyString
+  phone: MyString
+  notes: MyString

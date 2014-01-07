@@ -1,0 +1,25 @@
+<h2>People</h2>
+<%= link_to 'New Person', new_person_path %><br/><br/>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Group</th>
+    <th>Work</th>
+    <th>Nonwork</th>
+  </tr>
+<% @people.each do |person| %> 
+  <tr>
+    <td><%= person.name %></td>
+    <td><%= if not person.group.nil? then person.group.name end %></td>
+    <td><%= person.work %></td>
+    <td><%= person.nonwork %></td>
+    <td>
+	<%= link_to 'Edit', edit_person_path(person) %>
+	<%= link_to 'Delete', person, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New Person', new_person_path %>
+

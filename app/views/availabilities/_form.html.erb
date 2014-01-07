@@ -1,0 +1,37 @@
+<%= form_for(@availability) do |f| %>
+  <% if @availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
+
+      <ul>
+      <% @availability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= collection_select(:availability, :person_id, Person.order("name"), :id, :name, { :selected => @availability.person_id}, {}) %>
+  </div>
+  <div class="field">
+    <%= f.label "From Day:" %><br />
+    <%= f.date_select :fromDay %>
+  </div>
+  <div class="field">
+    <%= f.label 'To Day:' %><br />
+    <%= f.date_select :toDay %>
+  </div>
+  <div class="field">
+    <%= f.label "From Time:" %><br />
+    <%= f.time_select :fromTime %>
+  </div>
+  <div class="field">
+    <%= f.label "To Time:" %><br />
+    <%= f.time_select :toTime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

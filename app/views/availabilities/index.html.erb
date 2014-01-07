@@ -1,0 +1,23 @@
+<h2>Availabilities</h2>
+<table>
+  <tr>
+    <th>Person</th>
+    <th><div align="center">From Day</div></th>
+    <th><div align="center">To</div></th>
+    <th><div align="center">Between</div></th>
+    <th><div align="center">And</div></th>
+  </tr>
+<% @availabilities.each do |availability| %>
+  <tr>
+    <td><%= if not availability.person.nil? then availability.person.name end %></td>
+    <td><div align="center"><%= availability.fromDay.strftime("%m/%d/%Y") %></div></td>
+    <td><div align="center"><%= availability.toDay.strftime("%m/%d/%Y") %></div></td>
+    <td><div align="center"><%= availability.fromTime.strftime("%H:%M") %></div></td>
+    <td><div align="center"><%= availability.toTime.strftime("%H:%M") %></div></td>
+    <td><%= link_to 'Edit', edit_availability_path(availability) %></td>
+    <td><%= link_to 'Delete', availability, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New Availability', new_availability_path %>
